@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bill</title>
+    </head>
+    <style>
+            form{
+                background-color: white;
+                border: double;
+            }
+    </style>
+    <body>
+        <form>
+            <fieldset>
+                <legend> My Order </legend>
+                </br>
+                ID: 
+                <input type= "text" name="quantity" size=35 required id="name"/>
+                </br>
+                </br>
+                </br>
+                Item:
+                <select name="item">
+                    <option>Choose</option>
+                    <optgroup label="Clothes">
+                        <option value="Shirt"> Shirt </option>
+                        <option value="Skirt"> Skirt </option>
+                        <option value="Jacket"> Jacket </option>
+                        <option value="Dress"> Dress </option>
+                    </optgroup>
+                    <optgroup label="Accessories">
+                        <option value="Shoes"> Shoes </option>
+                        <option value="Watch"> Watch </option>
+                        <option value="Sunglasses"> Sunglasses </option>
+                        <option value="Hoodie"> Hoodie </option>
+                    </optgroup>
+                </select>
+                </br>
+                </br>
+                </br>
+                Brand:
+                <select name="brand">
+                    <option>Choose</option>
+                    <optgroup label="Indian">
+                        <option value="Amul"> Amul </option>
+                        <option value="ITC"> ITC </option>
+                        <option value="Tata"> Tata </option>
+                    </optgroup>
+                    <optgroup label="Foriegn">
+                        <option value="Louis Vuitton"> Louis Vuitton </option>
+                        <option value="Rolex"> Rolex </option>
+                        <option value="Chanel"> Chanel </option>
+                        <option value="Gucci"> Gucci </option>
+                    </optgroup>
+                </select>
+                </br>
+                </br>
+                </br>
+                Size: 
+                <select name="size">
+                    <option>Choose</option>
+                        <option value="XS"> XS </option>
+                        <option value="S"> S </option>
+                        <option value="M"> M </option>
+                        <option value="L"> L </option>
+                        <option value="XL"> XL </option>
+                        <option value="XXL"> XXL </option>
+                </select>
+                </br>
+                </br>
+                </br>
+                Quantity: 
+                <input type= "text" name="quantity" size=35 id="quantity"/>
+                </br>
+                </br>
+                </br>
+                Price Rs: 
+                <input type= "text" name="quantity" size=35 required id="price"/>
+                </br>
+                </br>
+                </br>
+                Total Price: 
+                <input type= "text" name="quantity" size=35 required id="total"/>
+                </br>
+                </br>
+                </br>
+                GST: 
+                <input type= "text" name="quantity" size=35 required id="gst"/>
+                </br>
+                </br>
+                </br>
+                Discount: 
+                <input type= "text" name="quantity" size=35 required id="disc"/>
+                </br>
+                </br>
+                </br>
+                Payable Amount: 
+                <input type= "text" name="quantity" size=35 required id="pay"/>
+                </br>
+                </br>
+                </br>
+            </fieldset>
+        </form>
+        <button onclick="calc()">Calculate</button>
+        <button onclick="calc()">Continue Shopping</button>
+        <button onclick="invite()">Pay</button>
+    </body>
+    <script>
+        function calc ()
+        {
+            var qty1 = document.getElementById("quantity").value;
+            var price1 = document.getElementById("price").value;
+            var gst1 = parseInt((price1*qty1)*4/100);
+            var tot = parseInt((price1*qty1)+gst1);
+            document.getElementById("gst").value = gst1;
+            document.getElementById("total").value = tot;
+            if (tot>=5000)
+            {
+                document.getElementById("disc").value = 1000;
+                document.getElementById("pay").value = parseInt(tot-1000);
+            }
+            else if (tot>1000 && tot<=5000)
+            {
+                document.getElementById("disc").value = 5000;
+                document.getElementById("pay").value = parseInt(tot-500);
+            }
+            else
+            {
+                document.getElementById("disc").value = 0;
+                document.getElementById("pay").value = parseInt(tot);
+            }
+        }
+        function invite ()
+        {
+            var id = document.getElementById("name").value;
+            if (id="V12")
+            {
+                window.location.href = "invite_v.html";
+            }
+            else if (id="O12")
+            {
+                window.location.href = "invite_o.html";
+            }
+            else if (id="R12")
+            {
+                window.location.href = "invite_r.html";
+            }
+            else if (id="I12")
+            {
+                window.location.href = "invite_v.html";
+            }
+            else
+            {
+                document.getElementById("name").value = "Invalid. Try again."
+            }
+        }
+    </script>
+</html>
