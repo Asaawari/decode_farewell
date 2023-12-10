@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Bill</title>
+        <link href="invite.html">
     </head>
     <style>
             form{
@@ -133,26 +134,8 @@
         function invite ()
         {
             var id = document.getElementById("name").value;
-            if (id="V12")
-            {
-                window.location.href = "invite_v.html";
-            }
-            else if (id="O12")
-            {
-                window.location.href = "invite_o.html";
-            }
-            else if (id="R12")
-            {
-                window.location.href = "invite_r.html";
-            }
-            else if (id="I12")
-            {
-                window.location.href = "invite_v.html";
-            }
-            else
-            {
-                document.getElementById("name").value = "Invalid. Try again."
-            }
+            localStorage.setItem("name",id);
+            window.location.href = "invite.html";
         }
     </script>
 </html>
