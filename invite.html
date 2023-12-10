@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Surpise!</title>
+        <link href="index.html">
+    </head>
+    <body>
+        <img src="cat.jpg">
+        <h2>We'll miss you!</h2>
+        <h1 id="namef" onclick=getName()>here</h1>
+    </body>
+    <script>
+        function getName ()
+        {
+            document.getElementById("namef").value = localStorage.getItem("name");
+        }
+        window.onload = getName();
+    </script>
+</html>
